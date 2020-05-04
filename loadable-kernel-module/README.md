@@ -12,3 +12,6 @@ Cleaning the directory: `make clean`
 
 4. Checking prink messages:
 `dmesg`
+
+5. Exported Parameters in `sysfs`:
+`$ cat /sys/module/parameters_lkm/parameters/nos`

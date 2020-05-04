@@ -6,9 +6,13 @@
 #include <linux/init.h>
 #include <linux/module.h>
 
+/* Exported symbol from parameters-lkm module */
+// extern int my_module_counter;
+
 static int __init hello_init(void)
 {
     printk(KERN_ALERT "Hello World! \n");
+    //printk(KERN_ALERT "counter: %d\n", my_module_counter);
     return 0;
 }
 

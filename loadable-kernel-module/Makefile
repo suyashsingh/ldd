@@ -1,4 +1,6 @@
-obj-m = hello-world.o
+obj-m += hello-world.o
+obj-m += parameters-lkm.o
+
 
 all:
 	make -C /lib/modules/$(shell uname -r)/build/ M=$(PWD) modules
