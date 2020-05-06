@@ -4,6 +4,8 @@
 + Installed linux kernel using [rpi-source](https://github.com/notro/rpi-source/wiki).
 + **Hardware:** Raspberry Pi 3B+
 
+>If you are not able to explain some erratic behaviour, check your power supply. Your Raspberry Pi might be in an `undervoltage` state. Get a good power supply(3 amps).
+
 + **OS Information:**
     ```bash
     pi@raspberrypi:~/ldd $ cat /etc/os-release 

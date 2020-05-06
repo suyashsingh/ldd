@@ -20,10 +20,29 @@
 4. Allocate, initialize and add cdev to system.
     + https://elixir.bootlin.com/linux/latest/source/fs/char_dev.c#L236
     + https://elixir.bootlin.com/linux/latest/source/fs/char_dev.c#L648
-
-If you forget to add cdev to the system, this happens:
-```bash
-pi@raspberrypi:~ $ cat /dev/my_driver
-cat: /dev/my_driver: No such device or address
-```
-
+    + If you forget to add cdev to the system, this happens:
+        ```bash
+        pi@raspberrypi:~ $ cat /dev/my_driver
+        cat: /dev/my_driver: No such device or address
+        ```
+5. Testing the driver
+    + Reading the device file using `cat`:
+        `cat /dev/my_driver`
+    + Else you can use python shell as well: `python3`
+        + Open python shell
+            `$ python3`
+        + Open the file and read:
+            ```python
+            f=open('/dev/my_driver', 'r')
+            f.read(1) # Read one byte from the file
+            f.read() # To read the entire contents
+            f.close()
+            ```
+    + For writing using bash:`echo "Hello" > /dev/my_driver` make sure you have
+    appropriate ownership for the file.
+    + With python shell:
+        ```python
+        f.open('/dev/my_driver','w')
+        f.write('Hello')
+        f.close() # Data would be flushed when the file is closed.
+        ```
